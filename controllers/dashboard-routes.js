@@ -7,11 +7,7 @@ router.get('/edit/:id', withAuth, (req,res) => {
     Post.findByPk(req.params.id, {
         attributes: [
             'id',
-<<<<<<< HEAD
-            'post_url',
-=======
             'post_body',
->>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
