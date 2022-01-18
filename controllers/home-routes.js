@@ -9,7 +9,11 @@ router.get('/post/:id', (req, res) => {
         },
         attributes: [
             'id',
+<<<<<<< HEAD
             'post_url',
+=======
+            'post_body',
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -54,7 +58,11 @@ router.get('/', (req, res) => {
     Post.findAll({
         attributes: [
             'id',
+<<<<<<< HEAD
             'post_url',
+=======
+            'post_body',
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']

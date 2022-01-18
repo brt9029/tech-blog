@@ -6,7 +6,7 @@
     <form class="edit-post-form">
         <div>
             <input name="post-title" type="text" value="{{post.title}}" />
-            <span>({{format_url post.post_url}})</span>
+            <span>({{format_url post.post_body}})</span>
         </div>
         <div>
             {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
@@ -14,7 +14,7 @@
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
         </div>
         <button type="submit">Save post</button>
-        <buttom type="button" class="delete-post-btn">Delete post</buttom>
+        <button type="button" class="delete-post-btn">Delete post</button>
     </form>
 </article>
 

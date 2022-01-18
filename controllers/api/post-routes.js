@@ -27,7 +27,11 @@ router.delete('/:id', withAuth, (req, res) => {
 router.post('/', withAuth, (req, res) => {
     Post.create({
         title: req.body.title,
+<<<<<<< HEAD
         post_url: req.body.post_url,
+=======
+        post_body: req.body.post_body,
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
         user_id: req.session.user_id
     })
       .then(dbPostData => res.json(dbPostData))
@@ -85,7 +89,11 @@ router.get('/:id', (req, res) => {
         },
         attributes: [
             'id',
+<<<<<<< HEAD
             'post_url',
+=======
+            'post_body',
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
@@ -110,7 +118,11 @@ router.get('/:id', (req, res) => {
               res.status(404).json({ message: 'No post found with this id' });
               return;
           }
+<<<<<<< HEAD
           res.json(dbPostData);
+=======
+          res.render('post');
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
       })
       .catch(err => {
           console.log(err);
@@ -125,7 +137,11 @@ router.get('/', (req, res) => {
         order: [['created_at', 'DESC']],
         attributes: [
             'id',
+<<<<<<< HEAD
             'post_url',
+=======
+            'post_body',
+>>>>>>> 0d91b605a1456ced72fcf43cbc89782d12408204
             'title',
             'created_at',
             [sequelize.literal('(SELECT COUNT(*) FROM vote WHERE post.id = vote.post_id)'), 'vote_count']
