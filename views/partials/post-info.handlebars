@@ -1,6 +1,6 @@
 <article class="post">
     <div class="title">
-        <a href="/post/{{id}}">{{title}}</a>
+        <h1><a href="/post/{{id}}">{{title}}</a></h1>
     </div>
     <div>
         <p>
@@ -8,7 +8,7 @@
         </p>
     </div>
     <div class="meta">
-        {{vote_count}} {{format_plural "point" vote_count}} by {{user.username}} on {{format_date created_at}}
+        Author: {{user.username}} on {{format_date created_at}} {{vote_count}} {{format_plural "Upvote" vote_count}}
         |
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
     </div>
