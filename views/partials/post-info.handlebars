@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <section class="form-div">
 <div class = "card">
            <div class="card-header"> <h3> {{title}}</h3> </div>
@@ -10,3 +11,20 @@
       </small>
     </div>
     </section>
+=======
+<article class="post">
+    <div class="title">
+        <h1><a href="/post/{{id}}">{{title}}</a></h1>
+    </div>
+    <div>
+        <p>
+            {{post_body}}
+        </p>
+    </div>
+    <div class="meta">
+        Author: {{user.username}} on {{format_date created_at}} {{vote_count}} {{format_plural "Upvote" vote_count}}
+        |
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+    </div>
+</article>
+>>>>>>> 175c27ed59c4f258b05224e5f8737954bda53ee0

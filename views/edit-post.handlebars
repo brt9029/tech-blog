@@ -1,17 +1,21 @@
 <section class="form-div">
    
     <form class="edit-post-form">
-
-         <h2> Edit Post </h2>
-         <input name="post-title" type="text" value="{{post.title}}" />
-         <textarea name='post-body'>{{post.post_body}}</textarea>
+        <div>
+            <input name="post-title" type="text" value="{{post.title}}" />
+        </div>
+        <div>
+            <textarea name='post-body'>{{format_url post.post_body}}</textarea>
+        </div>
         <div>
             {{post.vote_count}} {{format_plural "point" post.vote_count}} by you on {{format_date post.created_at}}
             |
             <a href="/post/{{post.id}}">{{post.comments.length}} {{format_plural "comment" post.comments.length}}</a>
         </div>
-      <a href="/post/{{post.id}}"> <button type="submit">Save post</button></a>
-      <button type="button" class="delete-post-btn">Delete post</button>
+        <button type="submit">Update post</button>
+        <button type="button" class="delete-post-btn">Delete post</button>
+    </form>
+</article>
 
     </form>
 </section>

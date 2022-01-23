@@ -56,6 +56,7 @@ router.put('/upvote', withAuth, (req, res) => {
 
 // UPDATE post
 router.put('/:id', withAuth, (req, res) => {
+<<<<<<< HEAD
   Post.update(
     {
       title: req.body.title,
@@ -78,6 +79,30 @@ router.put('/:id', withAuth, (req, res) => {
       console.log(err);
       res.status(500).json(err);
     });
+=======
+    Post.update(
+        {
+            title: req.body.title,
+            post_body: req.body.post_body
+        },
+        {
+            where: {
+                id: req.params.id
+            }
+        }
+    )
+      .then(dbPostData => {
+          if (!dbPostData) {
+              res.status(404).json({ message: 'No post found with this id' });
+              return;
+          }
+          res.json(dbPostData);
+      })
+      .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+      });
+>>>>>>> 175c27ed59c4f258b05224e5f8737954bda53ee0
 });
 
 // GET a single post
