@@ -1,6 +1,9 @@
 {{> post-info post}}
 
+{{> comments post.comments}}
+
 {{#if loggedIn}}
+<div class="form-div">
 <form class="comment-form">
     <div>
         <textarea name="comment-body"></textarea>
@@ -11,9 +14,8 @@
         <button type="button" class="upvote-btn">upvote</button>
     </div>
 </form>
+</div>
 {{/if}}
-
-{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/javascript/comment.js"></script>
